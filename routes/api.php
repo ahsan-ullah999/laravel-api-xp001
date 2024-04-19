@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::get('/test', function (Request $request) {
-    // return $request->user();
-    return response()->json($request);
+// Route::get('/test', function (Request $request) {
+//     // return $request->user();
+//     return response()->json($request);
+Route::get('/users', function () {
+    $users = User::get();
+
+    return response()->json($users);
 });
