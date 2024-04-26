@@ -64,3 +64,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Laravel API xp001
+<h1>Description</h1>
+<br>
+This project is a Laravel API that allows user to interact with post data.<br>
+The API provides endpoint to retrieve all posts with associated user data JSON format.
+## Features<br>
+User and Post models with migration, factories,and seeds .<br>
+One-to-one relationship between User and Post.<br>
+API controller to fetch all posts with associated user data.<br>
+## Author<br>
+<h3>Ahsan ullah</h3>
+
