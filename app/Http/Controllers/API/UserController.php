@@ -7,12 +7,13 @@ use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\user;
 
+
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index1()
     {
         $users = User::with('post')->get();
         return UserResource::collection($users);
