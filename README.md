@@ -15,24 +15,30 @@ API controller to fetch all posts with associated user data.
 ## Installation
 
 Clone the repository.
-Run composer install to dependencies.
-Configure the .env file with your database credential.
-Migrate the database.To seed the database.Access the API endpoints to interact with the data.
 
 ```bash
-1.Clone the repository.
+
   git clone https://github.com/ahsan-ullah999/laravel-api-xp001.git
-2.Run composer install to dependencies.  
-  composer install
-3.Configure the .env file with your database credential.  
-  Inside the .env file,you can add your database credential in the following format:
+```
+Run composer install to dependencies.
+
+```bash
+composer install
+```
+Configure the .env file with your database credential.
+Inside the .env file,you can add your database credential in the following format:
+```bash
   DB_DATABASE=api_xp001
   DB_USERNAME=root
   DB_PASSWORD= 
-4.Migrate the database.  
-  php artisan migrate
-5.To seed the database.  
-  php artisan db:seed
+```
+Migrate the database.
+```bash
+ php artisan migrate
+```
+To seed the database. 
+```bash
+   php artisan db:seed
   --class=UserSeeder and
   --class=PostSeeder
 ```
