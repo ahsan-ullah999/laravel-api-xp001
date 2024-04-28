@@ -20,6 +20,12 @@ Configure the .env file with your database credential.
 Migrate the database.To seed the database.Access the API endpoints to interact with the data.
 
 ```bash
+  git clone https://github.com/ahsan-ullah999/laravel-api-xp001.git
+  composer install
+  Inside the .env file,you can add your database credential in the following format:
+  DB_DATABASE=api_xp001
+  DB_USERNAME=root
+  DB_PASSWORD= 
   php artisan migrate
   php artisan db:seed
   --class=UserSeeder and
