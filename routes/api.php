@@ -29,7 +29,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/posts',[PostController::class,'index']);
-Route::get('/users',[UserController::class,'index1']);
+Route::post('/posts',[PostController::class,'store'])->name('post.store');
 
 
 

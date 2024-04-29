@@ -17,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-            
+
             $posts = Post::with('user')->get();
             return PostResource::collection($posts);
 
@@ -28,6 +28,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        Post::create([
+            'title'=> $request->title,
+             'tag'=> $request->tag,
+             'description'=> $request->description,
+             'author'=> $request->author,
+
+        ]);
+        return response()->json( 201);
+        // $posts= new Post();
+        // $posts->title = $request->input('title');
+        // $posts->tag = $request->input('tag');
+        // $posts->description = $request->input('description');
+        // $posts->author = $request->input('author');
+        // $posts->save();
+
+
+        // return response()->json($posts, 201);
+
+
 
 
     }

@@ -19,8 +19,9 @@ class PostFactory extends Factory
         return [
             'title' => fake()->sentence(),
             // 'status' => fake()->default(),
-            'slug' => fake()->word(),
+            'tag' => fake()->word(),
             'description'=>fake()->text(),
+            'author'=>fake()->name(),
 
         ];
     }

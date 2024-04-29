@@ -16,4 +16,9 @@ class PostResource extends JsonResource
     {
         return parent::toArray($request);
     }
+
+    // public function post_store(Request $request){
+    //     $this->postJson(route('post.store'),['title'=> $request->title])->assertCreated();
+    //     $this->assertDatabaseHas('posts',['title'=>$request->title]);
+    // }
 }
