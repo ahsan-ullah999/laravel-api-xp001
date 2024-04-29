@@ -64,7 +64,76 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+    //    $posts= Post::find($id)-> $request->all();
+    //    $posts->title= $request->title;
+    //    $posts->tag= $request->tag;
+    //    $posts->description= $request->description;
+    //    $posts->author= $request->author;
+
+
+
+    //        if($request->id){
+    //          return response()->json( 201);
+    //        }else{
+    //          return response()->json("error", 404);
+    //        }
+
+
+
+
+
+
+
+        //  $posts= $request->all();
+        //  $model=Post::find($id);
+        //  if($model){
+        //      $model->update($posts);
+        //      return response()->json($model,200);
+
+        //  }else{
+        //      return response()->json(['error'=>'resource not found'],404);
+
+
+        //  }
+
+
+
+
+
+
+
+
+    //  Post::find($id)->update([
+    //     'title'=> $request->title,
+    //     'tag'=> $request->tag,
+    //     'description'=> $request->description,
+    //     'author'=> $request->author,
+
+    //     ]);
+    //     return response()->json( 201);
+
+
+
+
+
+           $posts= Post::find($request->$id);
+           $posts->title= $request->title;
+           $posts->tag= $request->tag;
+           $posts->description= $request->description;
+           $posts->author= $request->author;
+           $result= $posts->save();
+
+           if($result){
+             return response()->json( 201);
+           }else{
+            return response()->json(['error'=>'resource not found'],404);
+           }
+
+
+
+
+
     }
 
     /**

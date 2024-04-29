@@ -30,6 +30,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/posts',[PostController::class,'index']);
 Route::post('/posts',[PostController::class,'store'])->name('post.store');
+Route::put('/posts',[PostController::class,'update'])->name('post_update');
 
 
 
