@@ -15,9 +15,12 @@ use App\Http\Controllers\API\PostController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+// Route::resource('posts',PostController::class);
+
 Route::get('/posts',[PostController::class,'index']);
 
 Route::post('/posts',[PostController::class,'store']);
+Route::patch('/posts/{post}',[PostController::class,'update']);
 
 
 

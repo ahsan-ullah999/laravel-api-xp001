@@ -30,6 +30,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+           'title'=>'required',
+           'author'=>'required',
+        ]);
+
+
+
         return Post::create($request->all());
 
     }
@@ -39,7 +46,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return Post::find($id);
     }
 
     /**
@@ -47,6 +54,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $posts = Post::find($id);
+        $posts->update($request->all());
+        return $posts;
 
 
     }
