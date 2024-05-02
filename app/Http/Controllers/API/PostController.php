@@ -68,4 +68,17 @@ class PostController extends Controller
     {
        return Post::destroy($id);
     }
+
+   /**
+     * search the specified resource from storage.
+     * @param str $title
+     * @return \Illuminate\Http\Response
+     *
+     */
+
+    public function search($title)
+    {
+       return Post::where('title', 'like', '%'.$title.'%')->get();
+    }
+
 }

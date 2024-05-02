@@ -22,6 +22,7 @@ Route::get('/posts',[PostController::class,'index']);
 Route::post('/posts',[PostController::class,'store']);
 Route::patch('/posts/{post}',[PostController::class,'update']);
 Route::delete('/posts/{Post}',[PostController::class,'destroy']);
+Route::get('/posts/search/{title}',[PostController::class,'search']);
 
 
 
