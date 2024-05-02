@@ -66,6 +66,6 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       return Post::destroy($id);
     }
 }
