@@ -33,6 +33,8 @@ class PostController extends Controller
     {
         $request->validate([
            'title'=>'required',
+           'topic'=>'required',
+           'description'=>'required',
            'author'=>'required',
         ]);
 
@@ -73,6 +75,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title'=>'required',
+            'topic'=>'required',
+            'description'=>'required',
+            'author'=>'required',
+         ]);
         $posts = Post::find($id);
         $posts->update($request->all());
         return $posts;
