@@ -20,7 +20,7 @@ class PostFactory extends Factory
             'title' => fake()->sentence(),
             // 'status' => fake()->default(),
             'topic' => fake()->word(),
-            'description'=>fake()->text(),
+            'description'=>[],
             'author'=>fake()->name(),
 
         ];

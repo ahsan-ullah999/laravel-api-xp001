@@ -17,7 +17,9 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'description'=>[],
+            'user_id'=>1,
+            'post_id'=>1,
         ];
     }
 }

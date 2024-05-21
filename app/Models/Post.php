@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $casts = [
+       'description'=>'array'
+    ];
     protected $fillable = [
 
         'title',
@@ -19,12 +22,6 @@ class Post extends Model
 
 
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-    public function topic(){
-        return $this->belongsTo(Topic::class);
-    }
 
 
 
