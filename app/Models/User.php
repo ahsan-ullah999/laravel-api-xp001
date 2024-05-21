@@ -43,8 +43,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function post(){
-        return $this->hasOne(Post::class);
+    public function comments(){
+        return $this->hasMany(Comment::class, 'user_id');
     }
 
 
