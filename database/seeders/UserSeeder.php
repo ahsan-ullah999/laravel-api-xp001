@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\DB;
 
 class UserSeeder extends Seeder
 {
-    // use TruncateTable;
+     //use TruncateTable;
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
-        
+        //$this->truncate('users');
         DB::table('users')->truncate();
         $users = \App\Models\User::factory(15)->create();
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
