@@ -14,7 +14,7 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index1()
+    public function index()
     {
         $users = User::with('post')->get();
         return UserResource::collection($users);
@@ -34,7 +34,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return User::find($id);
     }
 
     /**
@@ -42,7 +42,9 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $users = User::find($id);
+        $users->update($request->all());
+        return $users;
     }
 
     /**
@@ -50,6 +52,17 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return User::destroy($id);
+    }
+   /**
+     * search the specified resource from storage.
+     * @param str $name
+     * @return \Illuminate\Http\Response
+     *
+     */
+
+    public function search($name)
+    {
+       return User::where('name', 'like', '%'.$name.'%')->get();
     }
 }

@@ -18,8 +18,11 @@ use App\Http\Controllers\Controller;
 |
 */
 // Route::resource('users',UserController::class);
-
+Route::get('/users',[UserController::class,'index']);
 Route::post('/users',[UserController::class,'store']);
+Route::patch('/users',[UserController::class,'update']);
+Route::delete('/users',[UserController::class,'delete']);
+Route::get('/users/search/{name}',[UserController::class,'search']);
 
 
 
