@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\PostController;
+use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\Controller;
 
 
 /*
@@ -15,8 +17,13 @@ use App\Http\Controllers\API\PostController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-// Route::resource('posts',PostController::class);
+// Route::resource('users',UserController::class);
 
+Route::post('/users',[UserController::class,'store']);
+
+
+
+/* Route::resource('posts',PostController::class);*/
 Route::get('/posts',[PostController::class,'index']);
 
 Route::post('/posts',[PostController::class,'store']);

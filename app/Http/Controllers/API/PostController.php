@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\API\PostRequest;
 use App\Http\Resources\PostResource;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostStoreRequest;
 
 
 class PostController extends Controller
@@ -28,15 +29,11 @@ class PostController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @param PostStoreRequest $request
      */
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
-        $request->validate([
-           'title'=>'required',
-           'topic'=>'required',
-           'description'=>'required',
-           'author'=>'required',
-        ]);
+
 
 
 
@@ -75,12 +72,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title'=>'required',
-            'topic'=>'required',
-            'description'=>'required',
-            'author'=>'required',
-         ]);
+
         $posts = Post::find($id);
         $posts->update($request->all());
         return $posts;
